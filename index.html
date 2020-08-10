@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="title icon" href="images/title-img.png">
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css
+    "> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css
+    ">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>Attendance Management System</title>
+  </head>
+  <body>
+    
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">A.M.S</a>
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+    
+      <!-- <div class="navbar-collapse" id="navbarSupportedContent"> -->
+        <ul class="navbar-nav ml-auto">
+          <!-- <li class="nav-item">
+            <a class="nav-link " href="#" tabindex="-1">DashBoard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" tabindex="-1">Attendance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" tabindex="-1">Faculty List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" tabindex="-1">Holidays</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link " href="#" tabindex="-1"><img class="user-image" src="./images/cust1.jpeg" alt="">
+              Sujoy Dev</a>
+          </li>
+        </ul>
+      <!-- </div> -->
+    </nav>
+    <!-- end of navbar -->
+
+    <!-- modal -->
+    <div class="modal fade" id="sign-out">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Want to leave?</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            Press logout to leave
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Stay Here</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of modal -->
+
+    <!-- cards -->
+    <div class="container-fluid">
+      
+    <section style="margin-top:75px;">
+     
+            <div class="row">
+              <div class="col-lg-3 col-sm-6  ">
+                <div class="card card-common">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <i class="fas fa-shopping-cart fa-3x text-warning"></i>
+                      <div class="text-right text-secondary">
+                        <h5 class="category">Sales</h5>
+                        <h3 class="count">$135,000</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-secondary">
+                    
+                    <hr>
+                    <i class="fas fa-sync mr-3"></i>
+                    <span>Updated Now</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6  ">
+                <div class="card card-common">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <i class="fas fa-money-bill-alt fa-3x text-success"></i>
+                      <div class="text-right text-secondary">
+                        <h5 class="category">Expenses</h5>
+                        <h3 class="count">$39,000</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-secondary">
+                      <hr>
+                    <i class="fas fa-sync mr-3"></i>
+                    <span>Updated Now</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6  ">
+                <div class="card card-common">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <i class="fas fa-users fa-3x text-info"></i>
+                      <div class="text-right text-secondary">
+                        <h5 class="category">Users</h5>
+                        <h3 class="count">15,000</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-secondary">
+                    <hr>
+                    <i class="fas fa-sync mr-3"></i>
+                    <span>Updated Now</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6  ">
+                <div class="card card-common">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <i class="fas fa-chart-line fa-3x text-danger"></i>
+                      <div class="text-right text-secondary">
+                        <h5 class="category">Visitors</h5>
+                        <h3 class="count">45,000</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-secondary">
+                      <hr>
+                    <i class="fas fa-sync mr-3"></i>
+                    <span>Updated Now</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+     
+    </section>
+    <!-- end of cards -->
+
+    <!-- tables -->
+    <section>
+     
+        <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title"> Simple Table</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table" id="table">
+                      <thead class=" text-primary">
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Country
+                        </th>
+                        <th>
+                          City
+                        </th>
+                        <th class="text-right">
+                          Salary
+                        </th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            Dakota Rice
+                          </td>
+                          <td>
+                            Niger
+                          </td>
+                          <td>
+                            Oud-Turnhout
+                          </td>
+                          <td class="text-right">
+                            $36,738
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Minerva Hooper
+                          </td>
+                          <td>
+                            Curaçao
+                          </td>
+                          <td>
+                            Sinaai-Waas
+                          </td>
+                          <td class="text-right">
+                            $23,789
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Sage Rodriguez
+                          </td>
+                          <td>
+                            Netherlands
+                          </td>
+                          <td>
+                            Baileux
+                          </td>
+                          <td class="text-right">
+                            $56,142
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Philip Chaney
+                          </td>
+                          <td>
+                            Korea, South
+                          </td>
+                          <td>
+                            Overland Park
+                          </td>
+                          <td class="text-right">
+                            $38,735
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Doris Greene
+                          </td>
+                          <td>
+                            Malawi
+                          </td>
+                          <td>
+                            Feldkirchen in Kärnten
+                          </td>
+                          <td class="text-right">
+                            $63,542
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Mason Porter
+                          </td>
+                          <td>
+                            Chile
+                          </td>
+                          <td>
+                            Gloucester
+                          </td>
+                          <td class="text-right">
+                            $78,615
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Jon Porter
+                          </td>
+                          <td>
+                            Portugal
+                          </td>
+                          <td>
+                            Gloucester
+                          </td>
+                          <td class="text-right">
+                            $98,615
+                          </td>
+                        </tr>
+                        <tr>
+                            <td>
+                              Mason Porter
+                            </td>
+                            <td>
+                              Chile
+                            </td>
+                            <td>
+                              Gloucester
+                            </td>
+                            <td class="text-right">
+                              $78,615
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Jon Porter
+                            </td>
+                            <td>
+                              Portugal
+                            </td>
+                            <td>
+                              Gloucester
+                            </td>
+                            <td class="text-right">
+                              $98,615
+                            </td>
+                          </tr><tr>
+                              <td>
+                                Mason Porter
+                              </td>
+                              <td>
+                                Chile
+                              </td>
+                              <td>
+                                Gloucester
+                              </td>
+                              <td class="text-right">
+                                $78,615
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Jon Porter
+                              </td>
+                              <td>
+                                Portugal
+                              </td>
+                              <td>
+                                Gloucester
+                              </td>
+                              <td class="text-right">
+                                $98,615
+                              </td>
+                            </tr><tr>
+                                <td>
+                                  Mason Porter
+                                </td>
+                                <td>
+                                  Chile
+                                </td>
+                                <td>
+                                  Gloucester
+                                </td>
+                                <td class="text-right">
+                                  $78,615
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Jon Porter
+                                </td>
+                                <td>
+                                  Portugal
+                                </td>
+                                <td>
+                                  Gloucester
+                                </td>
+                                <td class="text-right">
+                                  $98,615
+                                </td>
+                              </tr><tr>
+                                  <td>
+                                    Mason Porter
+                                  </td>
+                                  <td>
+                                    Chile
+                                  </td>
+                                  <td>
+                                    Gloucester
+                                  </td>
+                                  <td class="text-right">
+                                    $78,615
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    Jon Porter
+                                  </td>
+                                  <td>
+                                    Portugal
+                                  </td>
+                                  <td>
+                                    Gloucester
+                                  </td>
+                                  <td class="text-right">
+                                    $98,615
+                                  </td>
+                                </tr><tr>
+                                    <td>
+                                      Mason Porter
+                                    </td>
+                                    <td>
+                                      Chile
+                                    </td>
+                                    <td>
+                                      Gloucester
+                                    </td>
+                                    <td class="text-right">
+                                      $78,615
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      Jon Porter
+                                    </td>
+                                    <td>
+                                      Portugal
+                                    </td>
+                                    <td>
+                                      Gloucester
+                                    </td>
+                                    <td class="text-right">
+                                      $98,615
+                                    </td>
+                                  </tr><tr>
+                                      <td>
+                                        Mason Porter
+                                      </td>
+                                      <td>
+                                        Chile
+                                      </td>
+                                      <td>
+                                        Gloucester
+                                      </td>
+                                      <td class="text-right">
+                                        $78,615
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        Jon Porter
+                                      </td>
+                                      <td>
+                                        Portugal
+                                      </td>
+                                      <td>
+                                        Gloucester
+                                      </td>
+                                      <td class="text-right">
+                                        $98,615
+                                      </td>
+                                    </tr><tr>
+                                        <td>
+                                          Mason Porter
+                                        </td>
+                                        <td>
+                                          Chile
+                                        </td>
+                                        <td>
+                                          Gloucester
+                                        </td>
+                                        <td class="text-right">
+                                          $78,615
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          Jon Porter
+                                        </td>
+                                        <td>
+                                          Portugal
+                                        </td>
+                                        <td>
+                                          Gloucester
+                                        </td>
+                                        <td class="text-right">
+                                          $98,615
+                                        </td>
+                                      </tr><tr>
+                                          <td>
+                                            Mason Porter
+                                          </td>
+                                          <td>
+                                            Chile
+                                          </td>
+                                          <td>
+                                            Gloucester
+                                          </td>
+                                          <td class="text-right">
+                                            $78,615
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>
+                                            Jon Porter
+                                          </td>
+                                          <td>
+                                            Portugal
+                                          </td>
+                                          <td>
+                                            Gloucester
+                                          </td>
+                                          <td class="text-right">
+                                            $98,615
+                                          </td>
+                                        </tr><tr>
+                                            <td>
+                                              Mason Porter
+                                            </td>
+                                            <td>
+                                              Chile
+                                            </td>
+                                            <td>
+                                              Gloucester
+                                            </td>
+                                            <td class="text-right">
+                                              $78,615
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>
+                                              Jon Porter
+                                            </td>
+                                            <td>
+                                              Portugal
+                                            </td>
+                                            <td>
+                                              Gloucester
+                                            </td>
+                                            <td class="text-right">
+                                              $98,615
+                                            </td>
+                                          </tr><tr>
+                                              <td>
+                                                Mason Porter
+                                              </td>
+                                              <td>
+                                                Chile
+                                              </td>
+                                              <td>
+                                                Gloucester
+                                              </td>
+                                              <td class="text-right">
+                                                $78,615
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td>
+                                                Jon Porter
+                                              </td>
+                                              <td>
+                                                Portugal
+                                              </td>
+                                              <td>
+                                                Gloucester
+                                              </td>
+                                              <td class="text-right">
+                                                $98,615
+                                              </td>
+                                            </tr><tr>
+                                                <td>
+                                                  Mason Porter
+                                                </td>
+                                                <td>
+                                                  Chile
+                                                </td>
+                                                <td>
+                                                  Gloucester
+                                                </td>
+                                                <td class="text-right">
+                                                  $78,615
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  Jon Porter
+                                                </td>
+                                                <td>
+                                                  Portugal
+                                                </td>
+                                                <td>
+                                                  Gloucester
+                                                </td>
+                                                <td class="text-right">
+                                                  $98,615
+                                                </td>
+                                              </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+    </section>
+    <section>
+     
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Trends</h5>
+                <p class="card-category">24 Hours performance</p>
+              </div>
+              <div class="card-body ">
+                <canvas id=chartHours width="400" height="100"></canvas>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-history"></i> Updated 3 minutes ago
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <!-- end of tables -->
+   
+    <!-- progress / task list -->
+    <section>
+     
+        <div class="row">
+              <div class="col-lg-6 col-12">
+                <h4 class="text-muted p-3 mb-3">Notifications:</h4>
+                <div class="container-fluid bg-white">
+                  <div class="row py-3 mb-4 task-border align-items-center">
+                    <div class="col-1">
+                      <input type="checkbox" checked>
+                    </div>
+                    <div class="col-sm-9 col-8">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="<h6>edit</h6>" data-html="true" data-placement="top"><i class="fas fa-edit fa-lg text-success mr-2"></i></a>
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="<h6>delete</h6>" data-html="true" data-placement="top"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="container-fluid bg-white">
+                  <div class="row py-3 mb-4 task-border align-items-center">
+                    <div class="col-1">
+                      <input type="checkbox" checked>
+                    </div>
+                    <div class="col-sm-9 col-8">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="<h6>edit</h6>" data-html="true" data-placement="top"><i class="fas fa-edit fa-lg text-success mr-2"></i></a>
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="<h6>delete</h6>" data-html="true" data-placement="top"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="container-fluid bg-white">
+                  <div class="row py-3 mb-4 task-border align-items-center">
+                    <div class="col-1">
+                      <input type="checkbox" checked>
+                    </div>
+                    <div class="col-sm-9 col-8">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="<h6>edit</h6>" data-html="true" data-placement="top"><i class="fas fa-edit fa-lg text-success mr-2"></i></a>
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="<h6>delete</h6>" data-html="true" data-placement="top"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="container-fluid bg-white">
+                  <div class="row py-3 mb-4 task-border align-items-center">
+                    <div class="col-1">
+                      <input type="checkbox" checked>
+                    </div>
+                    <div class="col-sm-9 col-8">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="<h6>edit</h6>" data-html="true" data-placement="top"><i class="fas fa-edit fa-lg text-success mr-2"></i></a>
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="<h6>delete</h6>" data-html="true" data-placement="top"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="container-fluid bg-white">
+                  <div class="row py-3 mb-4 task-border align-items-center">
+                    <div class="col-1">
+                      <input type="checkbox" checked>
+                    </div>
+                    <div class="col-sm-9 col-8">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="<h6>edit</h6>" data-html="true" data-placement="top"><i class="fas fa-edit fa-lg text-success mr-2"></i></a>
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="<h6>delete</h6>" data-html="true" data-placement="top"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+     
+    </section>
+    <section>
+
+     
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-11 col-xs-12">
+            <div class="card card-user">
+              <div class="image">
+                <!-- <img src="./images/cust1.jpeg" alt="..."> -->
+              </div>
+              <div class="card-body">
+                <div class="author">
+                  <a href="#">
+                    <img class="avatar border-gray" src="./images/cust2.jpeg" alt="...">
+                    <h5 class="title">Prof. Neha Deshmukh</h5>
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer">
+                <hr>
+                  <div class="row">
+                    <div class="col-lg-3 col-md-6 col-6 m-auto info">
+                      <h5>IT
+                        <br>
+                        <small>Dept</small>
+                      </h5>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-6 m-auto info">
+                      <h5> 3
+                        <br>
+                        <small>Designation</small>
+                      </h5>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-6 m-auto info">
+                      <h5>    200
+                        <br>
+                        <small>Code</small>
+                      </h5>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-6 m-auto info">
+                      <h5>   2
+                        <br>
+                        <small>Team</small>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+          </div>
+          <div class="col-md-8">
+            <div class="card card-user">
+              <div class="card-header">
+                <h5 class="card-title">Edit Profile</h5>
+              </div>
+              <div class="card-body">
+                <form action="./action/attendance_add.php" method="POST" >
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div class="form-group">
+                        <label>Company (disabled)</label>
+                        <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" placeholder="Username" value="michael23">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" placeholder="Email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" placeholder="Company" value="Chet">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last Name" value="Faker">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>City</label>
+                        <input type="text" class="form-control" placeholder="City" value="Melbourne">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" class="form-control" placeholder="Country" value="Australia" required>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Postal Code</label>
+                        <input type="number" class="form-control" placeholder="ZIP Code">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                      <button type="submit" class="btn btn-primary btn-round form-btn">Update Profile</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </section>
+    <div class="card user-card" ></div>
+    <!-- employee -->
+    <button class="click">submit</button>
+<!-- <div class="modal fade" id="addnew" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"><b>Add Attendance</b></h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+<form method="POST" action="./action/faculty_add.php">
+<div class="form-group">
+    <label for="code" class="control-label">Employee Code</label>
+
+    
+      <input type="text" class="form-control" id="code" name="code" required>
+    </div>
+
+<div class="form-group">
+    <label for="name" class="control-label">Name</label>
+
+   
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+<div class="form-group">
+    <label for="email" class="control-label">Email</label>
+
+    
+      <input type="text" class="form-control" id="email" name="email" required>
+    </div>
+<div class="form-group">
+    <label for="phone" class="control-label">Phone</label>
+
+    
+      <input type="text" class="form-control" id="phone" name="phone" required>
+    </div>
+<div class="form-group">
+    <label for="dept" class="control-label">Dept</label>
+      <select name="dept" id="dept" class="form-control">
+        <option value="IT">IT</option>
+        <option value="Comp">Comp</option>
+        <option value="EXTC">EXTC</option>
+        <option value="Mech">Mech</option>
+        <option value="Civil">Civil</option>
+        <option value="Other">Other</option>
+    </select>
+
+   <div class="invalid-feedback">More example invalid feedback text</div>
+</div> 
+</form>            
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-warning btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+<button type="button" class="btn btn-danger btn-flat pull-left" data-dismiss="modal"><i class="far fa-trash-alt"></i> Remove</button>
+<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Save</button>
+
+</div>
+</div>
+</div>
+</div> -->
+
+
+
+<!-- attendance -->
+
+<div class="modal fade" id="addnew" data-backdrop="static" data-keyboard="false">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title"><b>Attendance</b></h4>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <span aria-hidden="true">&times;</span></button>
+</div>
+<div class="modal-body">
+<form method="POST" action="attendance_add.php">
+<div class="form-group">
+    <label for="code" class="control-label">Employee Code</label>
+
+   
+      <input type="text" class="form-control" id="code" name="code" required>
+   
+</div>
+<div class="form-group">
+    <label for="datepicker_add" class="control-label">Date</label>
+
+    
+      <div class="date">
+        <input type="text" class="form-control" id="datepicker_add" name="date" required>
+    
+    </div>
+</div>
+<div class="form-group">
+    <label for="time_in" class="control-label">Time In</label>
+
+ 
+      <div class="bootstrap-timepicker">
+        <input type="text" class="form-control timepicker" id="time_in" name="time_in">
+      </div>
+    
+</div>
+<div class="form-group">
+    <label for="time_out" class="control-label">Time Out</label>
+
+
+      <div class="bootstrap-timepicker">
+        <input type="text" class="form-control timepicker" id="time_out" name="time_out">
+      </div>
+</div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-warning btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+<button type="submit" class="btn btn-success btn-flat" name="add"><i class="fa fa-save"></i> Save</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+   
+    </div>
+<div class="card foot-card bg-light">
+    <p class="foot">Developed By Sujoy Dev, Prasad Jadhav Rutwik Gaikwad</p>
+  </div>
+  
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="./scripts/script.js"></script>
+   
+  </body>
+</html>
+
+
